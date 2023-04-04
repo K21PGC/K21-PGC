@@ -4,65 +4,94 @@
     --bd-color: rgba(159, 43, 104, 0.6);
     --bg-color: rgb(0, 0, 0);
     --dc-color: rgba(137, 207, 240, .85)
-
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-image: url(pimg.jpg);
     min-height: 100vh;
     background-size: cover;
     backdrop-filter: blur(2vh);
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: system-ui, 
+        -apple-system, 
+        BlinkMacSystemFont, 
+        'Segoe UI', 
+        Roboto, 
+        Oxygen, 
+        Ubuntu, 
+        Cantarell, 
+        'Open Sans', 
+        'Helvetica Neue', 
+        sans-serif;
+    overflow: hidden;
+    -webkit-user-select: none; /* Safari, Chrome */
+    -webkit-user-drag: none;
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE */
+    user-select: none; /* CSS3 */
 }
 
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     min-width: calc(100% - 100px);
     min-height: calc(100vh - 100px);
-    padding: 15px;
+    padding: 2.5vw;
+    -webkit-user-select: text; /* Safari, Chrome */
+    -webkit-user-drag: text;
+    -khtml-user-select: text; /* Konqueror */
+    -moz-user-select: text; /* Firefox */
+    -ms-user-select: text; /* IE */
+    user-select: text; /* CSS3 */
 }
-main i{
+
+main > i {
     color: var(--dc-color);
 }
-.profile-image{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
+
+.profile-image {
+    width: 30vh;
+    height: 30vh;
+    border-radius: 100%;
     border: 2.5px solid var(--bd-color);
     object-fit: cover;
 }
-.profile-name{
-    margin-top: 10px;
-    font-size: 32px;
+
+.profile-name {
+    margin-top: 1rem;
+    font-size: 2rem;
     color: var(--text-color);
     text-overflow: clip;
     text-shadow: 5px 5px var(--bg-color);
 }
-.discord{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 18px;
+
+.discord {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    margin-top: 0.5rem;
     text-align: center;
     color: var(--text-color);
 }
+
 .portal-link {
-    margin-top: 40px;
+    margin-top: 1rem;
     list-style: none;
 }
+
 .portal-link > li {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 38px;
-    margin-bottom: 17.5px;
+    width: 60vw;
+    height: 3rem;
+    margin-bottom: 1rem;
     border: 3.5px solid var(--bd-color);
     backdrop-filter: blur(10px) saturate(160%) contrast(180%);
     box-shadow: 7.5px 3px var(--bd-color);
@@ -71,43 +100,51 @@ main i{
 }
 
 ul > li > i {
-    position: fixed;
-    font-size: 30px;
-    left: 10px;
+    position: absolute;
+    font-size: 1rem;
+    margin-right: 55vw;
+    color: var(--dc-color)
 }
 
-.portal-link > li:nth-child(1) {
+.portal-link > li {
     background-color: rgba(0, 0, 0, 0.65);
 }
-.portal-link > li:nth-child(2) {
-    background-color: rgba(0,0,0, 0.65);
-}
-.portal-link > li:nth-child(3) {
-    background-color: rgba(0, 0, 0, 0.65);
-}
-.portal-link > li:nth-child(4) {
-    background-color: rgba(0, 0, 0, 0.65);
-}
+
 .portal-link > li > a {
     text-decoration: none;
+    text-align: center;
     color: var(--title-color);
     font-weight: 750;
-    font-size: 20px;
+    font-size: 1rem;
+    padding: 1rem 28vw;
 }
 
 .portal-link > li:hover {
     transform: translate(-5px, -5px);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 680px) {
 
- .portal-link {
-    width: 100%;
- }
+    main {
+        padding: 5vw;
+    }
 
- .portal-link > li {
-    width: 100%;
+    .portal-link {
+        width: 100%;
+    }
 
- }
+    .portal-link > li {
+        left: 0;
+        transform: translateX(-1.25%);
+        width: 100%;
+    }
+
+    ul > li > i {
+        margin-right: 80vw;
+    } 
+
+    .portal-link > li > a {
+        padding: 1rem 40vw;
+    }
 
 }
